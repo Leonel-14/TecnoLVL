@@ -4,14 +4,16 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url('../img/fondo.jpg');
+    background-image: url('/apps/templates/img/fondo.jpg');
     background-position:center;
     background-repeat: no-repeat;
-    background-size: cover;   
+    background-size: cover;
+    width: 100%;
+    height: max-content;
 }
 header{
     width: 100%;
-    height: min-content;
+    height: 70px;
     display: flex;
 }
 .nav_header{
@@ -19,6 +21,8 @@ header{
     height: min-content;
     display: flex;
     align-items: center;
+    position:fixed;
+    background-color: rgba(255,255,255,0.2);
 }
 .contenedor_img{
     width: 150px;
@@ -83,6 +87,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 }
 .contenedor_logo_footer{
     width: 100px;
