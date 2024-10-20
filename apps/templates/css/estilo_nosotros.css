@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+main{
+    width: 100%;
+}
+.titulo_equipo{
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+.equipo{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.tarjeta{
+    width: 300px;
+}
+.tarjeta_img{
+    width: 100%;
+    overflow: hidden;
+}
+
+.tarjeta_texto{
+    color: white;
+    text-align: center;
+    margin-top:10px;
+    border: 2px solid #11781d;
+    border-radius: 10px;
+}
+
+.horario_semana{
+    text-align: center;
+}
+
+.horario_ubicacion{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.tabla{
+    color: white;
+    text-align: center;
+    background-color: gray;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.encabezado_tabla th{
+    padding: 15px;
+}
+.cuerpo_tabla{
+    border-collapse:separate;
+}
+.cuerpo_tabla td{
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+}

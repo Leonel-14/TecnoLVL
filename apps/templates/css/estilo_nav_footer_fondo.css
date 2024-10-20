@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('/apps/templates/img/fondo.jpg');
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: max-content;
+}
+header{
+    width: 100%;
+    height: 70px;
+    display: flex;
+}
+.nav_header{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    position:fixed;
+    background-color: rgba(255,255,255,0.2);
+}
+.contenedor_img{
+    width: 150px;
+    height: min-content;
+    padding: 10px;
+}
+.contenedor_links{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.contenedor_img img{
+    width: 100%;
+}
+.contenedor_secciones a{
+    color: #11781d;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 1.2em;
+    position: relative;
+}
+.contenedor_secciones a::after{
+    content: '';
+    position: absolute;
+    background-color: #11781d;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s;
+}
+.contenedor_secciones a:hover::after{
+    transform: scale(1);
+    transform-origin: bottom left;
+}
+.contenedor_login a{
+    color: #11781d;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    text-decoration: none;
+    border: 1px solid #11781d;
+    padding: 10px;
+    border-radius: 30px;
+    transition: background-color 0.5s , color 0.5s;
+}
+.contenedor_login a:hover{
+    background-color: white;
+    color: black;
+}
+
+/*footer*/
+footer{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.contenedor_logo_footer{
+    width: 100px;
+    
+}
+.contenedor_logo_footer img{
+    width: 100%;
+    padding: 10px;
+}
+.contenedor_copyright p{
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+.contenedor_redes{
+    width: min-content;
+    height: min-content;
+    display: flex;
+}
+.contenedor_redes img{
+    width: 40px;
+    margin: 10px;
+    transform: scale(1);
+    transition: transform 0.5s;
+}
+.contenedor_redes img:hover{
+    transform: scale(1.2);
+}
