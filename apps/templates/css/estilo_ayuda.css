@@ -1,0 +1,22 @@
+.accordion {
+    border-color: #11781d !important;
+}
+
+.custom-border {
+    border-bottom-color: #11781d !important;
+}
+
+.accordion-button {
+    color: #f8f9fa;
+    background-color: #262c28;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #f8f9fa;
+    background-color: #11781d;
+}
+
+.accordion-item {
+    color: #f8f9fa;
+    background-color: #242424;
+}
