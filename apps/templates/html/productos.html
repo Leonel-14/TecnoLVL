@@ -1,29 +1,31 @@
+{% load static %}
+{% load django_bootstrap5 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilo_index.css">
-    <link rel="stylesheet" href="css/estilo_nav_footer_fondo.css">
+    <link rel="stylesheet" href= "../css/estilo_index.css">
+    <link rel="stylesheet" href= "{% static 'css/estilo_nav_footer_fondo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilo_producto.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/favicon_pagina.png' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/estilo_producto.css">
-    <link rel="stylesheet" href="../css/estilo_nav_footer_fondo.css">
-    <title>Document</title>
+    <title>TecnoLVL</title>
 </head>
 <body>
     <header>
       <nav class="nav_header">
           <div class="contenedor_img">
-          <img src="../img/LVLsinmarco.png">
+          <img src="{% static 'img/LVLsinmarco.png' %}">
           </div>
           <div class="contenedor_links">
               <div class="contenedor_secciones">
-                  <a href="../index.html">Inicio</a>
-                  <a href="productos.html">Productos</a>
-                  <a href="nosotros.html">Nosotros</a>
-                  <a href="ayuda.html">Ayuda</a>
+                  <a href="http://localhost:8000">Inicio</a>
+                  <a href="http://localhost:8000/productos">Productos</a>
+                  <a href="http://localhost:8000/nosotros">Nosotros</a>
+                  <a href="http://localhost:8000/ayuda">Ayuda</a>
               </div>
               <div class="contenedor_login">
                   <a href="#">Iniciar Sesion</a>
@@ -33,31 +35,35 @@
     </header>
     <main>
 
-        <div class="container main-container mt-">
-            <div class="row justify-content-center g-0">
-                <div class="card text-center card-product">
-                    <img src="https://resource.logitech.com/w_692,c_lpad,ar_4:3,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/headsets/zone-300/gallery/zone-300-offwhite-1.png?v=1" class="card-img-top" alt="foto-producto">
+        <div class="container main-container mt-" style="width: 100%; height: min-content;">
+            <div class="row justify-content-center g-0" style="display:flex; width: 100%; flex-wrap: wrap;">
+                {% for x in productosX %}
+                <div class="card text-center card-product" style="width: 200px;">
+                    <img src="{{x.imagen}}" class="card-img-top" alt="foto-producto">
                     <div class="card-body border-top border-4 custom-border">
-                    <h6 class="card-title">Auricular Logitech Zone 300 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, quibusdam. Laudantium tenetur quas necessitatibus corporis? Velit, dicta dolorum! Itaque dolore molestias eius natus porro nulla libero aliquam doloremque omnis reiciendis.</h6>
-                    <p class="card-text">$20.000</p>
+                    <h6 class="card-title">{{x.nombre}}</h6>
+                    <p class="card-text">{{x.marca}}<p>
+                    <p class="card-text">${{x.precio}}</p>
+                    <p class="card-text">{{x.descripcion}}</p>
                     <a href="#" class="btn product-btn text-white rounded-pill">Añadir al carrito</a>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </main>
 
     <footer>
       <div class="contenedor_logo_footer">
-          <img src="../img/LVL.png">
+          <img src="{% static 'img/LVL.png'%}">
       </div>
       <div class="contenedor_copyright">
           <p>&copy; Diseñado y Desarrollado por Leonel F. Rodriguez - Veronica P. Grimaldi</p>
       </div>
       <div class="contenedor_redes">
-          <img src="../img/icons8-instagram-50.png" alt="">
-          <img src="../img/icons8-github-50.png" alt="">
-          <img src="../img/icons8-linkedin-50.png" alt="">
+          <img src="{% static 'img/icons8-instagram-50.png' %}" alt="">
+          <img src="{% static 'img/icons8-github-50.png' %}" alt="">
+          <img src="{% static 'img/icons8-linkedin-50.png' %}" alt="">
       </div>
     </footer>
 </body>
