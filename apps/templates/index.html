@@ -21,12 +21,12 @@
           <img src="{% static 'img/LVLsinmarco.png' %}">
           </div>
           <div class="contenedor_links">
-              <div class="contenedor_secciones">
-                  <a href="http://localhost:8000">Inicio</a>
-                  <a href="http://localhost:8000/productos">Productos</a>
-                  <a href="http://localhost:8000/nosotros">Nosotros</a>
-                  <a href="http://localhost:8000/ayuda">Ayuda</a>
-              </div>
+            <div class="contenedor_secciones">
+                <a href="{% url 'inicio' %}">Inicio</a>
+                <a href="{% url 'productos' %}">Productos</a>
+                <a href="{% url 'nosotros' %}">Nosotros</a>
+                <a href="{% url 'ayuda' %}">Ayuda</a>
+            </div>
               <div class="contenedor_login">
                   <a href="#">Iniciar Sesion</a>
               </div>
