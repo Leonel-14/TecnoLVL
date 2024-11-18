@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="seccion_logueo">
+    <div class="contenedor_logueo">
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" placeholder="Nombre de Usuario" required>
+            <input type="password" placeholder="Contraseña" required>
+            <div class="contenedor_ingresar">
+                <button type="submit">Iniciar Sesion</button>
+            </div>
+        </form>
+        <a href="{% url 'registro' %}">Registrarse</a>
+    </div>
+</section>
+{% endblock %}

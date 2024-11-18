@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/estilo_producto_detalles.css' %}">
+{% endblock %}
+{% block content %}
+<section class="producto_detalles">
+    <div class="contenedor_img_producto">
+    <img src="{{producto.imagen}}">
+    </div>
+    <div class="contenedor_datos_producto_detalle">
+    <h2>{{producto.nombre}}</h2>
+    <p>Precio: ${{producto.precio}}</p>
+    <p>Caracteristicas:</p>
+    <p>{{producto.descripcion}}</p>
+    </div>
+</section>
+<h2 class="titulo_comentarios">Comentarios:</h2>
+<section class="comentarios">
+    {% for comentario in comentarios%}
+<div class="contenedor_comentarios">
+    <p>Fecha: {{comentario.fecha}}</p>
+    <p>Nombre de Usuario: {{comentario.usuario.username}}</p>
+    <p>{{comentario.descripcion}}</p>
+</div>
+ {% endfor %}
+<div class="contenedor_entrada_comentario">
+    <form method="post"> {% csrf_token %}
+       {{form.as_p}}
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+</section>
+
+{% endblock %}

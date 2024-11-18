@@ -1,0 +1,36 @@
+.seccion_logueo{
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor_logueo{
+    width: min-content;
+    height: min-content;
+    background: rgb(18,18,18);
+    background: linear-gradient(90deg, rgba(18,18,18,1) 0%, rgba(0,128,0,1) 67%, rgba(39,255,0,1) 100%);
+    padding: 50px;
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 30px;
+}
+.contenedor_logueo form{
+    font-size: 1.3em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+}
+.contenedor_logueo input{
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.7);
+}
+.contenedor_ingresar button{
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.contenedor_ingresar button:hover{
+    background-color: rgb(6, 255, 118);
+}

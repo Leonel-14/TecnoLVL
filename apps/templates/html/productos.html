@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/estilo_producto.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container main-container mt-">
+    <div class="row justify-content-center g-0">
+        {% for producto in productos %}
+        <div class="card text-center card-product" id="{{x.id}}">
+            <img src="{{producto.imagen}}" class="card-img-top" alt="foto-producto">
+            <div class="card-body border-top border-4 custom-border">
+            <h6 class="card-title">{{producto.nombre}}</h6>
+            <p class="card-text">{{producto.marca}}<p>
+            <p class="card-text">${{producto.precio}}</p>
+            <p class="card-text parrafo">{{producto.descripcion}}</p>
+        </div>
+        <a href="{% url 'producto_detalles' producto.id %}" class="boton_leer_mas">Leer mas...</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
