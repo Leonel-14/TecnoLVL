@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/estilo_login.css'%}">
+{% endblock %}
 {% block content %}
 <section class="seccion_logueo">
     <div class="contenedor_logueo">
         <form method="post">
             {% csrf_token %}
-            <input type="text" placeholder="Nombre de Usuario" required>
-            <input type="password" placeholder="Contraseña" required>
+            {{ form.as_p }}
             <div class="contenedor_ingresar">
                 <button type="submit">Iniciar Sesion</button>
             </div>

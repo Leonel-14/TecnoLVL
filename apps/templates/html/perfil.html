@@ -1,5 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Perfil</h1>
+<main class="container text-white mt-4">
+    <div class="row">
+        <h1 class="text-white fs-3 ms-4">Mi cuenta</h1>
+    </div>
+    <div class="row justify-content-md-center mt-2 mb-5 gap-3">
+        <div class="col-md-6 border bg-gray py-3">
+            <h2 class="mx-3 fs-4">Datos personales</h2>
+            <div class="row mx-2">
+                <div class="p-2 col-6">
+                    <h4>Nombre: {{usuario.nombre}}</h4>
+                    
+                </div>
+                <div class="p-2 col-6">
+                    <h4>Apellido: {{usuario.apellido}}</h4>
+                </div>
+                <div class="p-2 col-6">
+                    <h4>Nombre de Usuario: {{usuario.username}}</h4>
+                </div>
+              
+        </div>
+    </div>
+
+
+</main>
 {% endblock %}

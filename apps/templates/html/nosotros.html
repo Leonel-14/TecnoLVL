@@ -1,7 +1,58 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/estilo_nosotros.css' %}">
+{% endblock %}
 {% block content %}
 
-<h1>Nosotros</h1>
+<main>
+    <h3 class="titulo_equipo">Equipo</h3>
+    <section class="equipo">
+          <div class="tarjeta">
+            <img src="{% static 'img/Bill-Gates-Transparent-Images.png' %}" class="tarjeta_img" alt="...">
+            <div class="tarjeta_cuerpo">
+              <p class="tarjeta_texto">Dueño</p>
+            </div>
+          </div>
 
+          <div class="tarjeta">
+            <img src="{% static 'img/Mark.png' %}"  class="tarjeta_img" alt="...">
+            <div class="tarjeta_cuerpo">
+              <p class="tarjeta_texto">Gerente</p>
+            </div>
+          </div>
+
+          <div class="tarjeta">
+            <img src="{% static 'img/Steve-Jobs-PNG-Photo.png' %}"  class="tarjeta_img" alt="...">
+            <div class="tarjeta_cuerpo">
+              <p class="tarjeta_texto">Jefe de Logistica</p>
+            </div>
+          </div>
+    </section>
+
+    <section class="horario_ubicacion">
+        <div class="horario">
+        <table class=tabla>
+            <thead>
+              <tr class="encabezado_tabla">
+                <th class="dia_semana">Lunes Martes Miercoles Jueves Viernes</th>
+                <th>Sabado</th>
+                <th>Domingo</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr class="cuerpo_tabla">
+              <td class="horario_semana">10:00 hs - 18:00 hs</td>
+              <td>10:00 hs a 14:00 hs</td>
+              <td>Cerrado</td>
+            </tr>
+            </tbody>
+          </table>
+          </div>
+          <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d205.28291935840426!2d-58.41485490109994!3d-34.590840427972275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1729334415077!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+    </section>
+   
+</main>
 {% endblock %}

@@ -1,4 +1,6 @@
-
+.row{
+    margin-top: 10px !important;
+}
 .justify-content-center{
     display:flex;
     width: 100%;
