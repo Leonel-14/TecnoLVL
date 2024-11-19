@@ -1,42 +1,8 @@
-.row{
-    margin-top: 10px !important;
-}
-.justify-content-center{
-    display:flex;
-    width: 100%;
-    flex-wrap: wrap;
-}
-.card-body {
-    border-color: aquamarine;
-}
-
 .card-title {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;  
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: normal;
-}
-
-.card-product {
-    width: 300px !important;
-    height: 500px !important;
-    margin: 0.5em 1em;
-    
-    
-}
-.card-product img{
-    width: 100%;
-}
-
-.product-btn {
-    background-color: #11781d !important;
-}
-
-.product-btn:hover { 
-    background-color: #13541c !important;
-}
-
-.custom-border {
-    border-top-color: #11781d !important;
+    display: -webkit-box;
+    /* -webkit-line-clamp: 1; */
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
 }

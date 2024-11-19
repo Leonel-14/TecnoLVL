@@ -1,0 +1,26 @@
+.bg-gray {
+    background-color: #262c28;
+}
+
+.dropdown-item {
+    --bs-dropdown-link-active-bg: #11781d;
+}
+
+.dropdown-toggle {
+    background-color: #11781d;
+    border-color: #11781d;
+}
+
+.dropdown-toggle:hover {
+    background-color: #11781d;
+    border-color: #11781d;
+}
+
+.dropdown-toggle:focus {
+    background-color: #1e5f24;
+    border-color: #1e5f24;
+}
+
+.dropdown-title {
+    color: #11781d;
+}

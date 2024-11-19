@@ -7,16 +7,20 @@
 }
 
 .accordion-button {
-    color: #f8f9fa;
-    background-color: #262c28;
+    color: #f8f9fa !important;
+    background-color: #262c28 !important;
 }
 
 .accordion-button:not(.collapsed) {
-    color: #f8f9fa;
-    background-color: #11781d;
+    color: #f8f9fa !important;
+    background-color: #11781d !important;
 }
 
 .accordion-item {
-    color: #f8f9fa;
-    background-color: #242424;
+    color: #f8f9fa !important;
+    background-color: #242424 !important;
+}
+
+.title {
+    color: #11781d !important;
 }
