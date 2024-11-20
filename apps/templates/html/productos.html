@@ -12,22 +12,23 @@
 </form>
 {% endif %}
 </div>
-<div class="container main-container mt-">
-    <div class="row justify-content-center g-0">
+<div class="container mt-4">
+    <div class="d-flex flex-wrap gap-3 justify-content-center">
         {% for producto in productos %}
-        <div class="card text-center card-product" id="{{x.id}}">
-            <img src="{{producto.imagen}}" class="card-img-top" alt="foto-producto">
-            <div class="card-body border-top border-4 custom-border">
-            <h6 class="card-title">{{producto.nombre}}</h6>
-            <p class="card-text">{{producto.marca}}<p>
-            {% if request.user.is_authenticated %}
-                <p class="card-text">Precio: ${{producto.precio}}</p>
-            {% else %}
-                <p class="card-text">Iniciar sesión para ver precio</p>
-            {% endif %}
-            <p class="card-text parrafo">{{producto.descripcion}}</p>
-        </div>
-        <a href="{% url 'producto_detalles' producto.id %}" class="boton_leer_mas">Leer mas...</a>
+        <div class="card text-center" id="{{x.id}}" style="width: 16rem;">
+            <div class="imagen-box" style="height: 16rem; display: flex; justify-content: center; align-items: center;">
+                <img src="{{producto.imagen}}" class="card-img-top" alt="...">
+            </div>
+            <div class="card-body border-top border-3 border-success">
+              <p class="card-subtitle mb-0 text-body-secondary">{{producto.marca}}</p>
+              <h5 class="card-title">{{producto.nombre}}</h5>
+              {% if request.user.is_authenticated %}
+              <h5 class="card-title mb-0">${{producto.precio}}</h5>
+              {% else %}
+              <a href="{% url 'producto_detalles' producto.id %}" class="btn btn-outline-success rounded-pill btn-sm">Logueate para ver los precios</a>
+              {% endif %}
+              <a href="{% url 'producto_detalles' producto.id %}" class="btn btn-success rounded-pill mt-2">Ver más</a>
+            </div>
         </div>
         {% endfor %}
     </div>
