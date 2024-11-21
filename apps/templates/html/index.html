@@ -4,40 +4,37 @@
 <link rel="stylesheet" href="{% static 'css/estilo_index.css' %}">
 {% endblock%}
 {% block content %}
-    <section class="promos_1">
-        <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="{% static 'img/2x1.png' %}" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="{% static 'img/pendrive.png' %}" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="{% static 'img/usb.png' %}" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+<main>
+  <section class="promos_1">
+      <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
           </div>
-    </section>
-    <section class="promos_2">
-        <div class="contenedor_img_promos">
-            <img src="{% static 'img/promo1.png' %}" alt="">
-            <img src="{% static 'img/promo1.png' %}" alt="">
-            <img src="{% static 'img/promo1.png' %}" alt="">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{% static 'img/banner1.png' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'img/banner2.png' %}" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        
-    </section>
-    {% endblock %}
+  </section>
+  <section class="promos_2">
+      <div class="d-flex justify-content-center gap-2" style="height: 28rem;">
+          <img src="{% static 'img/prom1.png' %}" alt="">
+          <img src="{% static 'img/prom2.png' %}" alt="">
+          <img src="{% static 'img/prom1.png' %}" alt="">
+      </div>
+  </section>
+</main>
+{% endblock %}

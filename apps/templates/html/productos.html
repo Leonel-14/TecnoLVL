@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/estilo_producto.css' %}">
+<link rel="stylesheet" href="{% static 'css/estilo_nav_footer_fondo' %}">
 {% endblock %}
 {% block content %}
 
-{% if request.user.is_authenticated %}
-<div class="navbar bg-transparent" data-bs-theme="dark">
+<main>
+  <div>
+    <h3 class="text-center text-white my-4">Catálogo de productos</h3>
+  </div>
+  <hr class="border border-success border-1 opacity-50">
+  {% if request.user.is_authenticated %}
+  <div class="navbar bg-transparent" data-bs-theme="dark">
     <div class="container-fluid">
       <div class="btn-group dropdown">
         <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown"
@@ -20,27 +25,29 @@
       </div>
     </div>
   </div>
-{% endif %}
-</div>
-<div class="container mt-4">
+  </div>
+  {% endif %}
+  <div class="container mt-4">
     <div class="d-flex flex-wrap gap-3 justify-content-center">
-        {% for producto in productos %}
-        <div class="card text-center" id="{{x.id}}" style="width: 16rem;">
-            <div class="imagen-box" style="height: 16rem; display: flex; justify-content: center; align-items: center;">
-                <img src="{{producto.imagen}}" class="card-img-top" alt="...">
-            </div>
-            <div class="card-body border-top border-3 border-success">
-              <p class="card-subtitle mb-0 text-body-secondary">{{producto.marca}}</p>
-              <h5 class="card-title">{{producto.nombre}}</h5>
-              {% if request.user.is_authenticated %}
-              <h5 class="card-title mb-0">${{producto.precio}}</h5>
-              {% else %}
-              <a href="{% url 'producto_detalles' producto.id %}" class="btn btn-outline-success rounded-pill btn-sm">Logueate para ver los precios</a>
-              {% endif %}
-              <a href="{% url 'producto_detalles' producto.id %}" class="btn btn-success rounded-pill mt-2">Ver más</a>
-            </div>
+      {% for producto in productos %}
+      <div class="card text-center" id="{{x.id}}" style="width: 16rem;">
+        <div class="imagen-box" style="height: 16rem; display: flex; justify-content: center; align-items: center;">
+          <img src="{{producto.imagen}}" class="card-img-top" alt="...">
         </div>
-        {% endfor %}
+        <div class="card-body border-top border-3 border-success">
+          <p class="card-subtitle mb-0 text-body-secondary">{{producto.marca}}</p>
+          <h5 class="card-title">{{producto.nombre}}</h5>
+          {% if request.user.is_authenticated %}
+          <h5 class="card-title mb-0">${{producto.precio}}</h5>
+          {% else %}
+          <a href="{% url 'producto_detalles' producto.id %}"
+            class="btn btn-outline-success rounded-pill btn-sm">Logueate para ver los precios</a>
+          {% endif %}
+          <a href="{% url 'producto_detalles' producto.id %}" class="btn btn-success rounded-pill mt-2">Ver más</a>
+        </div>
+      </div>
+      {% endfor %}
     </div>
-</div>
+  </div>
+</main>
 {% endblock %}

@@ -6,53 +6,58 @@
 {% block content %}
 
 <main>
-    <h3 class="titulo_equipo">Equipo</h3>
+  <div>
+    <h3 class="text-center text-white my-4">Nosotros</h3>
+  </div>
+  <hr class="border border-success border-1 opacity-50">
+
+  <div class="container text-white">
     <section class="equipo">
-          <div class="tarjeta">
-            <img src="{% static 'img/Bill-Gates-Transparent-Images.png' %}" class="tarjeta_img" alt="...">
-            <div class="tarjeta_cuerpo">
-              <p class="tarjeta_texto">Dueño</p>
-            </div>
-          </div>
-
-          <div class="tarjeta">
-            <img src="{% static 'img/Mark.png' %}"  class="tarjeta_img" alt="...">
-            <div class="tarjeta_cuerpo">
-              <p class="tarjeta_texto">Gerente</p>
-            </div>
-          </div>
-
-          <div class="tarjeta">
-            <img src="{% static 'img/Steve-Jobs-PNG-Photo.png' %}"  class="tarjeta_img" alt="...">
-            <div class="tarjeta_cuerpo">
-              <p class="tarjeta_texto">Jefe de Logistica</p>
-            </div>
-          </div>
+      <div class="tarjeta">
+        <img src="{% static 'img/Bill-Gates-Transparent-Images.png' %}" class="tarjeta_img" alt="...">
+        <div class="tarjeta_cuerpo">
+          <p class="tarjeta_texto">Dueño</p>
+        </div>
+      </div>
+      <div class="tarjeta">
+        <img src="{% static 'img/Mark.png' %}" class="tarjeta_img" alt="...">
+        <div class="tarjeta_cuerpo">
+          <p class="tarjeta_texto">Gerente</p>
+        </div>
+      </div>
+      <div class="tarjeta">
+        <img src="{% static 'img/Steve-Jobs-PNG-Photo.png' %}" class="tarjeta_img" alt="...">
+        <div class="tarjeta_cuerpo">
+          <p class="tarjeta_texto">Jefe de Logistica</p>
+        </div>
+      </div>
     </section>
 
-    <section class="horario_ubicacion">
-        <div class="horario">
-        <table class=tabla>
-            <thead>
-              <tr class="encabezado_tabla">
-                <th class="dia_semana">Lunes Martes Miercoles Jueves Viernes</th>
-                <th>Sabado</th>
-                <th>Domingo</th>
-              </tr>
-            </thead>
-            <tbody>
-            <tr class="cuerpo_tabla">
-              <td class="horario_semana">10:00 hs - 18:00 hs</td>
-              <td>10:00 hs a 14:00 hs</td>
-              <td>Cerrado</td>
-            </tr>
-            </tbody>
-          </table>
-          </div>
-          <div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d205.28291935840426!2d-58.41485490109994!3d-34.590840427972275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1729334415077!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-    </section>
-   
+    <div class="row justify-content-center mt-2">
+      <div class="col-md-5">
+        <div>
+          <h3 class="lead fs-4">Bienvenidos a TecnoLVL</h3>
+          <p>Tu destino ideal para encontrar los mejores productos electrónicos. Ofrecemos calidad, innovación y precios competitivos. ¡Explorá nuestro
+            catálogo
+            y llevá la tecnología a otro nivel!</p>
+        </div>
+        <div class="mb-3">
+          <h3 class="lead fs-4">Horarios de Atención</h3>
+          <div>Lunes a viernes - 10:00 a 18:00</div>
+          <div>Sábado - 10:00 a 14:00.</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3 class="lead fs-4">Ubicación</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d205.28291935840426!2d-58.41485490109994!3d-34.590840427972275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1729334415077!5m2!1ses-419!2sar"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" class="w-100"></iframe>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
 </main>
 {% endblock %}
