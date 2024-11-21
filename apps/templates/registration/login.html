@@ -4,16 +4,28 @@
 <link rel="stylesheet" href="{% static 'css/estilo_login.css'%}">
 {% endblock %}
 {% block content %}
-<section class="seccion_logueo">
-    <div class="contenedor_logueo">
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <div class="contenedor_ingresar">
-                <button type="submit">Iniciar Sesion</button>
+<main class="container-md mt-4">
+    <div class="row justify-content-center">
+        <div class="col-4 text-center p-5 rounded rounded-2 border border-secondary-subtle" style="background-color: #262c28;">
+            <h3 class="mb-4 text-white">Iniciar sesión</h3>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control"  name="{{ form.username.name }}" autofocus autocapitalize="none" autocomplete="username" max="150" placeholder="Usuario" required id="id_username">
+                    <label for="id_username">Nombre de usuario</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <input type="password" name="{{ form.password.name }}" autocomplete="current-password" class="form-control" required id="id_password" placeholder="Contraseña">
+                    <label for="id_password">Contraseña</label>
+                </div>
+                <button type="submit" class="btn btn-success px-5">Ingresar</button>
+            </form>
+            <div class="mt-2">
+                <span class="text-white">¿No tenés cuenta?</span>
+                <a href="{% url 'registro' %}" class="text-success">Registrate</a>
             </div>
-        </form>
-        <a href="{% url 'registro' %}">Registrarse</a>
+        </div>
     </div>
-</section>
+</main>
+
 {% endblock %}

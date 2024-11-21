@@ -6,10 +6,20 @@
 {% block content %}
 
 {% if request.user.is_authenticated %}
-<form method="GET" action="{% url 'producto' %}">
-    <button type="submit" name="ordenar" value="asc" class="btn btn-success">Ordenar de Menor a Mayor Precio</button>
-    <button type="submit" name="ordenar" value="desc" class="btn btn-success">Ordenar de Mayor a Menor Precio</button>
-</form>
+<div class="navbar bg-transparent" data-bs-theme="dark">
+    <div class="container-fluid">
+      <div class="btn-group dropdown">
+        <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown"
+          aria-expanded="false">Ordenar</button>
+        <form method="GET" action="{% url 'producto' %}" class="dropdown-menu dropdown-menu-dark">
+          <button type="submit" name="ordenar" value="asc" class="btn btn-success dropdown-item">Menor a Mayor
+            Precio</button>
+          <button type="submit" name="ordenar" value="desc" class="btn btn-success dropdown-item">Mayor a Menor
+            Precio</button>
+        </form>
+      </div>
+    </div>
+  </div>
 {% endif %}
 </div>
 <div class="container mt-4">
