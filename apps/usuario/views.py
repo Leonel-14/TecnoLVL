@@ -15,10 +15,9 @@ class Logueo(LoginView):
     template_name = "registration/login.html"
 
     def form_invalid(self, form):
-        """No es obligatorio sobreescribir este método, pero es útil para agregar mensajes de error personalizados."""
         messages.error(
             self.request, "Credenciales incorrectas. Por favor, inténtalo de nuevo."
-        )  # Mensaje de error
+        )
         print("Error")
         return super().form_invalid(form)
 
