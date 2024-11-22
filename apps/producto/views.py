@@ -25,7 +25,6 @@ class ProductoView(TemplateView):
         context["productos"] = productos
         return context
 
-
 class ProductoDetallesView(LoginRequiredMixin,TemplateView):
     template_name = 'html/producto_detalles.html'
     login_url = 'login'
@@ -33,7 +32,6 @@ class ProductoDetallesView(LoginRequiredMixin,TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         
-        # Agrega los datos adicionales que necesitas
         producto = get_object_or_404(Producto, id=kwargs['pk'])
         comentarios = Comentario.objects.filter(producto=kwargs['pk'])
         form = ComentarioForm()

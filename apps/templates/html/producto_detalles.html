@@ -4,32 +4,53 @@
 <link rel="stylesheet" href="{% static 'css/estilo_producto_detalles.css' %}">
 {% endblock %}
 {% block content %}
-<section class="producto_detalles">
-    <div class="contenedor_img_producto">
-    <img src="{{producto.imagen}}">
+<main>
+    <div class="container mt-4 text-white">
+        <div class="card bg-transparent border border-0" data-bs-theme="dark">
+            <div class="row justify-content-center g-0 mb-3">
+                <div class="col-md-5 w-90" style="display: flex; justify-content: center; align-items: center;">
+                    <img src="{{producto.imagen}}" class="img-thumbnail bg-white" alt="...">
+                </div>
+                <div class="col-md-5">
+                    <div class="card-body border bg-dark-subtle rounded" style="height: 100%;">
+                        <div>
+                            <h3 class="lead">{{producto.marca}}</h3>
+                            <h2>{{producto.nombre}}</h2>
+                            <h3>${{producto.precio}}</h3>
+                        </div>
+                        <div class="mt-3 pt-2 border-top border-success">
+                            <h4>Descripción</h4>
+                            <p>{{producto.descripcion}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border border-success border-2 opacity-50">
+
+        <div class="row justify-content-center gap-2">
+            <h4 style="display: flex; justify-content: center;">Comentarios</h4>
+            <div class="col-md-5">
+                <form method="post"> {% csrf_token %}
+                    {{form.as_p}}
+                    <button type="submit" class="btn btn-success px-4 ">Enviar</button>
+                </form>
+            </div>
+            <div class="col-md-4 text-white">
+                {% for comentario in comentarios%}
+                <div class="card text-bg-dark mb-3" style="max-width: 25rem;">
+                    <div class="card-header">{{comentario.fecha}}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Por: {{comentario.usuario.username}}</h5>
+                        <p class="card-text">{{comentario.descripcion}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
     </div>
-    <div class="contenedor_datos_producto_detalle">
-    <h2>{{producto.nombre}}</h2>
-    <p>Precio: ${{producto.precio}}</p>
-    <p>Caracteristicas:</p>
-    <p>{{producto.descripcion}}</p>
-    </div>
-</section>
-<h2 class="titulo_comentarios">Comentarios:</h2>
-<section class="comentarios">
-    {% for comentario in comentarios%}
-<div class="contenedor_comentarios">
-    <p>Fecha: {{comentario.fecha}}</p>
-    <p>Nombre de Usuario: {{comentario.usuario.username}}</p>
-    <p>{{comentario.descripcion}}</p>
-</div>
- {% endfor %}
-<div class="contenedor_entrada_comentario">
-    <form method="post"> {% csrf_token %}
-       {{form.as_p}}
-        <button type="submit">Enviar</button>
-    </form>
-</div>
-</section>
+</main>
 
 {% endblock %}

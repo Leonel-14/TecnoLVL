@@ -7,8 +7,7 @@ from .forms import RegistroUsuarioForm
 from django.views.generic.edit import FormView
 from django.contrib.auth.decorators import login_required
 from .forms import UsuarioUpdateForm
-
-
+from django.urls import reverse_lazy
 
 # Create your views here.
 
@@ -20,16 +19,16 @@ class Logueo(LoginView):
         messages.error(
             self.request, "Credenciales incorrectas. Por favor, inténtalo de nuevo."
         )  # Mensaje de error
-        print("Errorr")
+        print("Error")
         return super().form_invalid(form)
 
 class RegistroUsuario(FormView):
     template_name = 'html/registro.html'
-    form_class = RegistroUsuarioForm  # Asocia el formulario correcto
-    success_url = 'perfil/'  # Redirige después del registro exitoso
+    form_class = RegistroUsuarioForm 
+    success_url = reverse_lazy('perfil') 
 
     def form_valid(self, form):
-        user = form.save()  # Guarda el usuario
+        user = form.save()
         login(self.request, user)  # Autentica y crea la sesión
         return super().form_valid(form)
 
