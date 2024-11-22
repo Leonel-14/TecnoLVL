@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="container-sm mt-4 text-white">
+        <div class="d-flex justify-content-center">
+            <div class="col-6 p-5 rounded rounded-2 border border-secondary-subtle"
+                style="background-color: #262c28" ;>
+                <h3 class="mb-4">Editar datos</h3>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="id_nombre" class="fs-5">Nombre</label>
+                            <input type="text" class="form-control" name="{{ form.nombre.name }}" value="{{ form.nombre.value }}">
+                        </div>
+                        <div class="col-6">
+                            <label for="id_apellido" class="fs-5">Apellido</label>
+                            <input type="text" class="form-control" name="{{ form.apellido.name }}" value="{{ form.apellido.value }}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="id_username" class="fs-5">Username</label>
+                            <input type="text" class="form-control" name="{{ form.username.name }}" value="{{ form.username.value }}">
+                        </div>
+                        <div class="col-6">
+                            <label for="id_email" class="fs-5">Correo electrónico</label>
+                            <input type="text" class="form-control" name="{{ form.email.name }}" value="{{ form.email.value }}">
+                        </div>
+                        
+                    </div>
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-success">Guardar cambios</button>
+                    </div>
+                </form method="post">
+            </div>
+        </div>
+    </main>
+{% endblock %}

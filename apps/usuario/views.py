@@ -1,10 +1,13 @@
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.views.generic import TemplateView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login,logout
 from .forms import RegistroUsuarioForm
 from django.views.generic.edit import FormView
+from django.contrib.auth.decorators import login_required
+from .forms import UsuarioUpdateForm
+
 
 
 # Create your views here.
@@ -46,3 +49,15 @@ def exit(request):
     logout(request)
     return redirect('inicio')
 
+@login_required
+def editar_cuenta(request):
+    if request.method == 'POST':
+        form = UsuarioUpdateForm(request.POST, instance=request.user)
+
+        if form.is_valid():
+            form.save()
+            return redirect('perfil')
+    else:
+        form = UsuarioUpdateForm(instance=request.user)
+
+    return render(request, 'html/editar_cuenta.html', {'form': form})

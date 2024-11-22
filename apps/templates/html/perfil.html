@@ -1,28 +1,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<main class="container text-white mt-4">
-    <div class="row">
-        <h1 class="text-white fs-3 ms-4">Mi cuenta</h1>
-    </div>
-    <div class="row justify-content-md-center mt-2 mb-5 gap-3">
-        <div class="col-md-6 border bg-gray py-3">
-            <h2 class="mx-3 fs-4">Datos personales</h2>
-            <div class="row mx-2">
-                <div class="p-2 col-6">
-                    <h4>Nombre: {{usuario.nombre}}</h4>
-                    
+<main class="container-sm mt-4 text-white">
+    <div class="d-flex justify-content-center">
+        <div class="col-6 p-5 rounded rounded-2 border border-secondary-subtle"
+            style="background-color: #262c28" ;>
+            <h3 class="mb-4">Mi cuenta</h3>
+            <div>
+                <div class="row">
+                    <div class="col-6">
+                        <h5 class="fs-5">Nombre</h5>
+                        <p>{{usuario.nombre}}</p>
+                    </div>
+                    <div class="col-6">
+                        <h5 class="fs-5">Apellido</h5>
+                        <p>{{usuario.apellido}}</p>
+                    </div>
                 </div>
-                <div class="p-2 col-6">
-                    <h4>Apellido: {{usuario.apellido}}</h4>
+                <div class="row">
+                    <div class="col-6">
+                        <h5 class="fs-5">Usuario</h5>
+                        <p>{{usuario.username}}</p>
+                    </div>
+                    <div class="col-6">
+                        <h5 class="fs-5">Correo</h5>
+                        <p>{{usuario.email}}</p>
+                    </div>
                 </div>
-                <div class="p-2 col-6">
-                    <h4>Nombre de Usuario: {{usuario.username}}</h4>
-                </div>
-              
+            </div>
+            <div class="mt-2">
+                <a href="{% url 'editar_cuenta' %}" class="btn btn-success">Editar datos</a>
+            </div>
         </div>
     </div>
-
-
 </main>
 {% endblock %}
