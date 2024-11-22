@@ -11,11 +11,15 @@ class RegistroUsuarioForm(UserCreationForm):
         model = Usuario
         fields = ('nombre','apellido','username','password1','password2','email')
 
-    def __init__(self, *args, **kwargs):
-            super().__init__(*args, **kwargs)
-            # Eliminar los textos de ayuda
-            for field in self.fields.values():
-                field.help_text = ""
+    def clean(self):
+        datos = super().clean()
+        password1 = datos.get('password1')
+        password2 = datos.get('password2')
+        
+        if password1 != password2:
+            raise forms.ValidationError("Las contraseñas no coinciden.")
+
+        return datos
 
 class UsuarioUpdateForm(forms.ModelForm):
     nombre = forms.CharField(max_length=30, required=True)
